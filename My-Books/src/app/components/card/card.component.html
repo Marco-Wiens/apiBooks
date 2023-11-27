@@ -1,0 +1,19 @@
+<div class="card cont-books">
+    <div style="display: flex; width: auto; justify-content: flex-end;">
+        <a class="x" (click) = "deleteBook()" >  X  </a>
+    </div>
+    <img class="card-img-top " style="width: 270px; height: 270px; border-radius: 10px 10px 0   0;" src="{{book.photo}}" alt="">
+    
+    <div class="cont-book" style="padding: 30px;">
+
+        <div class="card-body" style="display: flex; flex-direction: column; ">    
+            <p class="card-text" style="font-size: small;">{{book.type}}</p>
+            <hr style="width: 150px;">
+            <h5 class="card-title">{{book.title}}</h5>
+            <p class="card-text">Autor: {{book.author}}</p>
+            <p class="card-text">{{book.id_book | formatoLibros}}</p>
+            <p class="card-text precio" style="text-align: center; font-family: Poppins;">{{book.price}} €</p>
+            <a  class="btn btn-primary bg-black border-0 annadir" [ngClass]="{'color-diferente':  i! % 2 === 0}">Comprar</a>
+        </div>
+    </div>
+</div>

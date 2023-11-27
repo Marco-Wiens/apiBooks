@@ -1,0 +1,15 @@
+div{
+    
+        background-image: url("../../../assets/img/fondo-de-libros.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-attachment: fixed;
+    
+        
+        
+    
+}

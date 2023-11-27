@@ -1,0 +1,45 @@
+<div class="back">
+    <div class="fond">
+        <div class="profil">
+
+            <div class="card cont_user">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <img style="height: 200px; width: 200px; border: 2px solid black; border-radius: 100px;" src="{{user.imagen}}" alt=""> 
+
+                    
+                </div>
+                <h4 class="card-title" >{{user.name +" "+ user.apellido}}</h4>
+                <div class="card-text"> 
+                    <h6>Nombre</h6>
+                    <input type="text" value="{{user.name}}" disabled style="width: 300px;">
+                </div>
+                <div class="card-text"> 
+                    <h6>Apellidos</h6>
+                    <input type="text" value="{{user.apellido}}" disabled style="width: 300px;">
+                </div>
+                <div class="card-text"> 
+                    <h6>Correo</h6>
+                    <input type="text" value=" {{user.email}}" disabled style="width: 300px;">
+                </div>
+
+            </div>
+            <div class="card cont_form">
+                
+                <div>
+                    <h2 class="card-title" style="width: 300px;"> Editar datos</h2>
+                    <hr>
+                </div>
+                <form action="">
+                    <input type="text" placeholder="Nombre" #name>
+                    <input type="text" placeholder="Apellidos" #apellido>
+                    <input type="text" placeholder="Correo" #email >
+                    <input type="text" placeholder="Url de imagen" #imagen>
+                    
+                </form>
+                <button (click)="modificarUser(name.value, apellido.value, email.value, imagen.value)">Modificar</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>

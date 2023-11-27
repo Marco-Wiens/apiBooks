@@ -1,0 +1,96 @@
+.back{
+    background-image: url("../../../assets/img/fondo-de-libros.jpg");
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-attachment: fixed;
+
+}
+.fondo{
+    font-family: Poppins_No_Bold;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+.fond{
+    font-family: Poppins_No_Bold;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    align-self: center;
+    flex-wrap: wrap;
+    margin-top: 8%;
+}
+
+
+.cont_book{
+    display: flex;
+    flex-direction: row;
+    padding:    80px;
+    align-items: center;
+}
+
+.book{
+    margin-bottom: 2%;
+    font-family: Poppins_No_Bold;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    flex-wrap: wrap;
+
+}
+
+.annadir{
+    align-self: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    color: grey;
+
+}
+
+.annadir:hover{
+    color: white ;
+}
+
+a::after{
+    background-color: transparent;
+    
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 5%; 
+    background-color: black; 
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.form_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    cursor: pointer;
+}
+
+.color-diferente{
+    background-color: darkblue;
+}
+.no_libros{
+    height: 89vh;
+}

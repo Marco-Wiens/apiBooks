@@ -1,0 +1,36 @@
+.fter{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;    
+    background-color: antiquewhite;
+    bottom: 0;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.foot_items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 300px;
+
+}
+
+a{
+    height: 50px;
+    width: 50px;
+    color: none;
+}
+
+a::after{
+
+    background-color: antiquewhite;
+
+}

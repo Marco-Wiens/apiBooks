@@ -1,0 +1,56 @@
+
+
+.cont_book{
+    display: flex;
+    flex-direction: row;
+    padding:    80px;
+    align-items: center;
+}
+
+.book{
+    margin-bottom: 2%;
+    font-family: Poppins_No_Bold;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    flex-wrap: wrap;
+
+}
+
+.annadir{
+    align-self: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    color: grey;
+
+}
+
+.annadir:hover{
+    color: white ;
+}
+
+a::after{
+    background-color: transparent;
+    
+}
+
+.x{
+    padding:0 10px 0 10px;
+    position: absolute;
+    z-index: 10; 
+    text-align: right; 
+    color: black; 
+    border-radius: 5px; 
+    background-color: rgba(255, 228, 196, 0.632); 
+    border: 1px solid black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.color-diferente{
+    background-color: darkblue;
+}

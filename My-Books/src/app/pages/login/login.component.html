@@ -1,0 +1,43 @@
+
+<div class="back">
+    <div class="fondo">
+        <div class="formulario">
+            <h1 style="padding: 50px;"> Log In</h1>
+            <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group" >
+                    <div class="form_item">
+                        <label for="email">Usuario: </label>
+                        <div class="input-container">
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="user.email" #emailModel="ngModel"
+                                [ngClass]="{'is-invalid': emailModel.invalid && (emailModel.dirty || emailModel.touched)}" email required>
+                        </div>
+                    </div>
+                    <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="error-container invalid-feedback">
+
+                        <p *ngIf="emailModel.errors?.['required']" class="error-message">El correo electrónico es obligatorio.</p>
+                        <p *ngIf="emailModel.errors?.['email']" class="error-message">El formato del correo electrónico no es válido.</p>
+                    </div>
+                      
+                  
+                </div>
+              
+                <div class="form-group">
+                    <div class="form_item">
+                        <label for="password">Contraseña: </label>
+                        <div class="input-container">
+                            <input class="form-control" type="password" placeholder="Contraseña" name="password" [(ngModel)]="user.password"
+                                #passwordModel="ngModel" [ngClass]="{'is-invalid': passwordModel.invalid && (passwordModel.dirty || passwordModel.touched)}" required>
+                        </div>
+                    </div>
+                    <div *ngIf="passwordModel.invalid && (passwordModel.dirty || passwordModel.touched)" class="error-container invalid-feedback">
+                        <p *ngIf="passwordModel.errors?.['required']" class="error-message">La contraseña es obligatoria.</p>
+                    </div>
+                </div>
+              
+                <div class="form_item" style="display: flex; justify-content: end;  padding-bottom: 50px;">
+                  <button (click)="register()" [disabled]="userForm.invalid">Acceder</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

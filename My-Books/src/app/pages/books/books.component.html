@@ -1,0 +1,22 @@
+<div class="back" [ngClass]="{'no_libros':  this.booksService.getAll().length === 0}">
+    <div class="fondo" [ngClass]="{'no_libros':  this.booksService.getAll().length === 0}">
+        <input [(ngModel)]="searchItem" *ngIf="this.booksService.getAll().length > 0" type="text" placeholder="Buscar Libro" (input)="buscar()" style="margin-top: 5%;">
+        <div class="fond" [ngClass]="{'no_libros':  this.booksService.getAll().length === 0}">
+            <div *ngIf="books.length == 0" style="margin-top: -5%; height: 89vh; display: flex; align-items: center;">
+                <h1 style="color: white; text-align: center;">
+                    No hay Ningún libro en la librería 
+                    <h1 *ngIf="this.booksService.getOne(searchItem).length === 0 && this.booksService.getAll().length > 0 ">
+                        con el id {{searchItem}}
+                    </h1>
+                </h1>
+            </div>
+            
+            <div class="cards book" *ngFor="let book of books; let i=index" >
+                
+                <app-card [book] = "book" [i] = "i" (eventoBook) = "deleteBook($event)"></app-card>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
