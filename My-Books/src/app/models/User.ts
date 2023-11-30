@@ -4,17 +4,17 @@ export class User{
     
     public id_user: number;
     public name: string;
-    public apellido: string;
+    public last_name: string;
     public email: string;
-    public imagen: string;
+    public photo: string;
     public password: string;
 
-    constructor(name:string, apellido: string, email:string, imagen: string, password: string){
+    constructor(name:string, last_name: string, email:string, photo: string, password: string){
         this.id_user = 0;
         this.name = name;
-        this.apellido = apellido;
+        this.last_name = last_name;
         this.email = email;
-        this.imagen = imagen;
+        this.photo = photo;
         this.password = password;
     }
 

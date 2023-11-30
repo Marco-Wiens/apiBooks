@@ -4,16 +4,15 @@
             <h3 style="color: white; padding: 15px;">Nuevo Libro</h3>
             <form action="" style="display: flex; flex-direction: column; color: white;">
                 <div class="form_item">
-                    <label for="">ID del Libro: </label>
-                    <input type="number" placeholder="ID del Libro" #id_book>
-                </div>
-                <div class="form_item">
                     <label for="">Título: </label>
                     <input type="text"  placeholder="Título del Libro" #title>
                 </div>
                 <div class="form_item">
                     <label for="">Tipo de Libro: </label>
-                    <input type="text"  placeholder="Tipo de Libro" #type>
+                    <select type="text"  placeholder="Tipo de Libro" #type>
+                        <option value="Tapa Blanda">Tapa Blanda</option>
+                        <option value="Tapa Dura">Tapa Dura</option>
+                    </select>
                 </div>
                 <div class="form_item" >
                     <label for="">Autor: </label>
@@ -29,7 +28,7 @@
                 </div>
 
             </form>
-            <button style="width: 400px;" (click)="crearLibro(id_book.value, title.value, type.value, author.value, price.value, photo.value)">Guardar Libro</button>
+            <button style="width: 400px;" (click)="crearLibro( title.value, type.value, author.value, price.value, photo.value)">Guardar Libro</button>
         </div>
     </div>
 </div>

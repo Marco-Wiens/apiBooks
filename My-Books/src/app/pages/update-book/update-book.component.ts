@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Books } from 'src/app/models/books';
+import { Respuesta } from 'src/app/models/respuesta';
 import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { BooksService } from 'src/app/shared/books.service';
 export class UpdateBookComponent {
 
 
-  constructor(public booksService: BooksService){
+  constructor(public booksService: BooksService, public toastr: ToastrService){
 
   }
 
@@ -19,10 +21,16 @@ export class UpdateBookComponent {
         // Crea un nuevo libro
         let modBook: Books = new Books(title, type, author, Number(price), photo, Number(id_book));
         // Llama al método add del servicio BooksService que añade el libro al array de libros
-        this.booksService.edit(modBook);
+        this.booksService.edit(modBook).subscribe((respuesta: Respuesta) => {
+          if (respuesta.error) {
+            this.toastr.error(respuesta.mensaje);
+          } else {
+            this.toastr.success(respuesta.mensaje);
+          }
+        });
       
     } else {
-      alert("Por favor, rellene todos los campos");
+      this.toastr.error("Por favor, rellene todos los campos");
     }
   }
 }

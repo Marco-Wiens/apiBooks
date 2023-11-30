@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Books } from 'src/app/models/books';
+import { Respuesta } from 'src/app/models/respuesta';
 import { BooksService } from 'src/app/shared/books.service';
 
 
@@ -10,32 +12,30 @@ import { BooksService } from 'src/app/shared/books.service';
 })
 export class AddBookComponent {
 
+  books: Books[];
 
-
-  constructor(public booksService: BooksService){
+  constructor(public booksService: BooksService, public toastr: ToastrService){
 
   }
   
-  crearLibro(id_book:string, title: string, type: string, author: string, price:string, photo:string){
+  crearLibro( title: string, type: string, author: string, price:string, photo:string){
+
 
     // Verifica que todos los campos estén llenos
-    if (id_book !== undefined && title !== "" && type !== "" && author !== "" && price !== undefined && photo !== "") {
-      // Verifica si ya existe un libro con el mismo id_book
-      const existingBook = this.booksService.getAll().find(book => book.id_book === Number(id_book));
-
-      if (existingBook) {
-        alert("Ya existe un libro con el mismo ID. No se puede añadir el libro.");
-      } else {
-        // Crea un nuevo libro
-        let bookNew: Books = new Books(title, type, author, Number(price), photo, Number(id_book));
-        // Llama al método add del servicio BooksService que añade el libro al array de libros
-        this.booksService.add(bookNew);
-        
-      }
+    if (title !== "" && type !== "" && author !== "" && price !== undefined && photo !== "") {
       
-    } else {
-      alert("Por favor, rellene todos los campos");
-    }
+      let newBook: Books = new Books(title, type, author, Number(price), photo);
+      
+      this.booksService.add(newBook).subscribe((respuesta: Respuesta) => {
+        if (!respuesta.error) {
+          this.toastr.success(respuesta.mensaje);
+          
+        } else {
+          this.toastr.error(respuesta.mensaje);
+        }
+      });
+    } else this.toastr.error('Rellene todos los campos porfavor');
   }
-
 }
+
+
